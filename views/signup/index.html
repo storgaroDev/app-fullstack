@@ -7,85 +7,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="stylesheet" href="index.css">
-    <link rel="shortcut icon" href="./imagenes/creativo.png">
-
     <title>Registro</title>
 </head>
 
 <body>
-    <div class="sidebar">
-        <div class="logo-details">
-          <i class='bx bxl-c-plus-plus icon'></i>
-            <div class="logo_name">The Kingdom</div>
-            <i class='bx bx-menu' id="btn" ></i>
-        </div>
-        <ul class="nav-list">
-          <li>
-            <a href="/admin/works/">
-              <i class='bx bx-grid-alt'></i>
-              <span class="links_name">Trabajos</span>
-            </a>
-             <span class="tooltip">Trabajos</span>
-          </li>
-          <li class="admin-btn">
-           <a href="/admin/profiles/">
-             <i class='bx bx-user' ></i>
-             <span class="links_name">Usuarios</span>
-           </a>
-           <span class="tooltip">Usuarios</span>
-         </li>
-         <li class="admin-btn">
-           <a href="/signup/">
-             <i class='bx bxs-user-plus'></i>
-             <span class="links_name">Crear Nuevo Usuario</span>
-           </a>
-           <span class="tooltip">Crear Nuevo Usuario</span>
-         </li>
-         <li>
-           <a href="/admin/newWork/">
-            <i class='bx bxs-edit'></i>
-             <span class="links_name">Nuevo Trabajo</span>
-           </a>
-           <span class="tooltip">Nuevo Trabajo</span>
-         </li>
-         <li>
-          <a href="/admin/addWorks">
-            <i class='bx bx-clipboard'></i>
-            <span class="links_name">Añadir Acciones</span>
-          </a>
-          <span class="tooltip">Añadir Acciones</span>
-        </li>
-        <li>
-          <a href="/admin/addMarca">
-            <i class='bx bx-car'></i>
-            <span class="links_name">Añadir Marca</span>
-          </a>
-          <span class="tooltip">Añadir Marca</span>
-        </li>
-         <li class="profile">
-             <div class="profile-details">
-               <!--<img src="profile.jpg" alt="profileImg">-->
-             <a href="/">
-               <i class='bx bx-log-out' id="log_out" ></i>
-             </a>
-         </li>
-        </ul>
-      </div>
-    <div id="container" class="h-screen pt-20  flex justify-center items-center px-4 gap-8">
+
+    <div id="container" class="h-screen pt-20 dark:bg-[#1a202c] bg-zinc-50 flex justify-center items-center px-4 gap-8">
         <form id="form"
-            class=" bg-zinc-100 w-full lg:w-[40%] md:w-[70%] md:ml-24 rounded-lg shadow-md p-2 flex flex-col gap-4 p-4">
+            class="dark:bg-[#1a202c] bg-zinc-100 w-full lg:w-[40%] md:w-[70%] rounded-lg shadow-md p-2 flex flex-col gap-4 p-4">
             <!-- Name input -->
             <div id="input-name" class="flex flex-col gap-2 text-lg relative">
-                <label for="name-input" class="dark:text-dark font-semibold">
-                    Nombre Completo <span class=" text-red-500">*</span>
+                <label for="name-input" class="dark:text-slate-50 text-zinc-700 font-semibold">
+                    Nombre <span class="dark:text-red-400 text-red-500">*</span>
                 </label>
                 <div class="relative">
-                    <input type="text" id="name-input" placeholder="Nombre Apellido"
-                        class="border border-zinc-200 p-2 rounded-md bg-transparent focus:outline-0 focus:ring-2 focus:ring-blue-400 ease-in duration-200 text-slate-800 font-semibold w-full">
+                    <input type="text" id="name-input"
+                        class="border dark:border-slate-600 border-zinc-200 p-2 rounded-md bg-transparent focus:outline-0 focus:ring-2 focus:ring-blue-400 ease-in duration-200 dark:text-zinc-50 text-slate-800 font-semibold w-full">
                      <!-- ICONOS -->
-                    <div class="absolute right-1 top-1 bottom-1 px-2 flex justify-center items-center bg-zinc-100">
+                    <div class="absolute right-1 top-1 bottom-1 px-2 flex justify-center items-center bg-[#1a202c]">
                         <svg class="w-6 h-6 text-red-500 hidden" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
                             fill="currentColor">
                             <path fill-rule="evenodd"
@@ -105,19 +44,19 @@
                 </div>
 
 
-                <p class="dark:text-red-400 text-red-500 font-semibold text-sm hidden">This space is required</p>
+                <p class="dark:text-red-400 text-red-500 font-semibold text-sm hidden">Este espacio es requerido</p>
             </div>
             <!-- Email input -->
             <div id="input-email" class="flex flex-col gap-2 text-lg relative">
-                <label for="email-input" class="text-black font-semibold">
-                    E-mail <span class=" text-red-500">*</span>
+                <label for="email-input" class="dark:text-slate-50 text-zinc-700 font-semibold">
+                    E-mail <span class="dark:text-red-400 text-red-500">*</span>
                 </label>
 
                 <div class="relative">
-                    <input type="text" id="email-input" placeholder="ejemplo@correo.com"
-                        class="border border-zinc-200 p-2 rounded-md bg-transparent focus:outline-0 focus:ring-2 focus:ring-blue-400 ease-in duration-200 text-slate-800 font-semibold w-full">
+                    <input type="text" id="email-input"
+                        class="border dark:border-slate-600 border-zinc-200 p-2 rounded-md bg-transparent focus:outline-0 focus:ring-2 focus:ring-blue-400 ease-in duration-200 dark:text-zinc-50 text-slate-800 font-semibold w-full">
                      <!-- ICONOS -->
-                     <div class="absolute right-1 top-1 bottom-1 px-2 flex justify-center items-center bg-zinc-100">
+                    <div class="absolute right-1 top-1 bottom-1 px-2 flex justify-center items-center bg-[#1a202c]">
                         <svg class="w-6 h-6 text-red-500 hidden" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
                             fill="currentColor">
                             <path fill-rule="evenodd"
@@ -135,21 +74,22 @@
 
                 </div>
 
-                <p class="dark:text-red-400 text-red-500 font-semibold text-sm hidden">Please put your E-mail with this format: ejemplo@correo.com</p>
+                <p class="dark:text-red-400 text-red-500 font-semibold text-sm hidden">El formato del email es el
+                    siguiente: ejemplo@correo.com</p>
             </div>
             <!-- Password input -->
             <div id="input-password" class="flex flex-col gap-2 text-lg relative">
-                <label for="password-input" class=" text-black font-semibold">
-                    Contraseña <span class=" text-red-500">*</span>
+                <label for="password-input" class="dark:text-slate-50 text-zinc-700 font-semibold">
+                    Contraseña <span class="dark:text-red-400 text-red-500">*</span>
                 </label>
 
                 
                 <div class="relative">
 
-                    <input type="password" id="password-input" placeholder="*********"
-                        class="border border-zinc-200 p-2 rounded-md bg-transparent focus:outline-0 focus:ring-2 focus:ring-blue-400 ease-in duration-200 text-slate-800 font-semibold w-full">
+                    <input type="text" id="password-input"
+                        class="border dark:border-slate-600 border-zinc-200 p-2 rounded-md bg-transparent focus:outline-0 focus:ring-2 focus:ring-blue-400 ease-in duration-200 dark:text-zinc-50 text-slate-800 font-semibold w-full">
                     <!-- ICONOS -->
-                    <div class="absolute right-1 top-1 bottom-1 px-2 flex justify-center items-center bg-zinc-100">
+                    <div class="absolute right-1 top-1 bottom-1 px-2 flex justify-center items-center bg-[#1a202c]">
                         <svg class="w-6 h-6 text-red-500 hidden" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
                             fill="currentColor">
                             <path fill-rule="evenodd"
@@ -167,20 +107,20 @@
 
                 </div>
 
-                <p class="dark:text-red-400 text-red-500 font-semibold text-sm hidden">Minimum 8 characters. <br> Must include 
-                    one capital letter, one special character, and at least one number.</p>
+                <p class="dark:text-red-400 text-red-500 font-semibold text-sm hidden">Mínimo 8 caracteres. <br> Debe
+                    incluir una mayúscula, un caracter especial y al menos un número.</p>
             </div>
             <!-- Confirm password input -->
             <div id="input-password-confirm" class="flex flex-col gap-2 text-lg relative">
-                <label for="confirm-input" class=" text-black font-semibold">
-                    Confirmar Contraseña <span class="text-red-500">*</span>
+                <label for="confirm-input" class="dark:text-slate-50 text-zinc-700 font-semibold">
+                    Contraseña <span class="dark:text-red-400 text-red-500">*</span>
                 </label>
                 <div class="relative">
-                    <input type="password" id="confirm-input" placeholder="**********"
-                        class="border  border-zinc-200 p-2 rounded-md bg-transparent focus:outline-0 focus:ring-2 focus:ring-blue-400 ease-in duration-200 text-slate-800 font-semibold w-full">
+                    <input type="text" id="confirm-input"
+                        class="border dark:border-slate-600 border-zinc-200 p-2 rounded-md bg-transparent focus:outline-0 focus:ring-2 focus:ring-blue-400 ease-in duration-200 dark:text-zinc-50 text-slate-800 font-semibold w-full">
 
                      <!-- ICONOS -->
-                     <div class="absolute right-1 top-1 bottom-1 px-2 flex justify-center items-center bg-zinc-100">
+                    <div class="absolute right-1 top-1 bottom-1 px-2 flex justify-center items-center bg-[#1a202c]">
                         <svg class="w-6 h-6 text-red-500 hidden" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
                             fill="currentColor">
                             <path fill-rule="evenodd"
@@ -198,52 +138,20 @@
 
                 </div>
 
-                <p class="dark:text-red-500 text-red-500 font-semibold text-sm hidden">Must match the password placed in the above field
+                <p class="dark:text-red-400 text-red-500 font-semibold text-sm hidden">Debe coincidir con la contraseña
                 </p>
-            </div>
-            <!-- Usuario del empleado -->
-            <div id="input-id" class="flex flex-col gap-2 text-lg relative">
-                <label for="id-input" class=" text-black font-semibold">
-                    Usuario/ID Inicio <span class="text-red-500">*</span>
-                </label>
-                <div class="relative">
-                    <input type="input" id="id-input" placeholder="**********"
-                        class="border  border-zinc-200 p-2 rounded-md bg-transparent focus:outline-0 focus:ring-2 focus:ring-blue-400 ease-in duration-200 text-slate-800 font-semibold w-full">
-
-                     <!-- ICONOS -->
-                     <div class="absolute right-1 top-1 bottom-1 px-2 flex justify-center items-center bg-zinc-100">
-                        <svg class="w-6 h-6 text-red-500 hidden" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-                            fill="currentColor">
-                            <path fill-rule="evenodd"
-                                d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12zM12 8.25a.75.75 0 01.75.75v3.75a.75.75 0 01-1.5 0V9a.75.75 0 01.75-.75zm0 8.25a.75.75 0 100-1.5.75.75 0 000 1.5z"
-                                clip-rule="evenodd" />
-                        </svg>
-                        <svg class="w-6 h-6 text-green-500 hidden" xmlns="http://www.w3.org/2000/svg"
-                            viewBox="0 0 24 24" fill="currentColor">
-                            <path fill-rule="evenodd"
-                                d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12zm13.36-1.814a.75.75 0 10-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 00-1.06 1.06l2.25 2.25a.75.75 0 001.14-.094l3.75-5.25z"
-                                clip-rule="evenodd" />
-                        </svg>
-                    </div>
-
-
-                </div>
             </div>
             <!-- Button -->
             <button id="form-btn"
-                class="bg-blue-600 rounded-md hover:bg-blue-500 p-2 text-green-50 uppercase font-semibold ease-in duration-300">Crear Empleado</button>
+                class="dark:bg-green-400 bg-green-500 rounded-lg p-2 text-green-50 uppercase font-semibold dark:hover:bg-green-500 hover:bg-green-600 ease-in duration-300">Registrar</button>
             <!-- <img src="../images/undraw_join_re_w1lh.svg" alt="" class="fixed right-0 bottom-0 z-0"> -->
-            <!-- <p class="text-sm font-light text-gray-500 dark:text-gray-400">
-                Already have an account? <a href="/login/" class="font-medium text-primary-600 hover:underline text-blue-500">Login here</a>
-            </p> -->
-        
         </form>
-        <!-- <div class="hidden lg:flex w-[40%] h-[70%] flex justify-center items-center">
+        <div class="hidden lg:flex w-[40%] h-[70%] flex justify-center items-center">
             <img src="/images/signupimg.svg" alt="" class="h-full">
-        </div> -->
+        </div>
     </div>
 
-    <!-- <script src="../components/nav.js"></script> -->
+    <script src="../components/nav.js"></script>
     <script type="module" src="../components/notification.js"></script>
     <script type="module" src="index.js"></script>
 </body>

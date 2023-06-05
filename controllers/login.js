@@ -4,21 +4,15 @@ const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 
 loginRouter.post('/', async (request, response) =>{
-    const {email, password, usuario} = request.body;
+    const {email, password} = request.body;
 
     //Buscar si el email ya esta regsitrado
-    const user = await User.findOne({ usuario });
+    const user = await User.findOne({ email });
 
     //Buscar si usuario existe
     if (!user) {
         return response.status(400).json({ error: 'Email y/o contraseña invalidos' });
     }
-
-    // verificacion de correo
-    // if (!user.verify) {
-    //     return response.status(400).json({ error: 'Email not verified' });
-        
-    // }
 
     //verificar el password
     const passwordCorrect = await bcrypt.compare(password, user.passwordHash);
@@ -30,7 +24,6 @@ loginRouter.post('/', async (request, response) =>{
     // crear token para el usuario
     const userForToken = {
         email,
-        usuario,
         id: user.id
     }
     

@@ -3,9 +3,7 @@ const mongoose = require('mongoose');
 const userSchema = new mongoose.Schema({
     name: String,
     email: String,
-    passwordHash: String,
-    usuario: String,
-    role: String,
+    passwordHash: String, 
     todos: [
         {
             type: mongoose.Schema.Types.ObjectId,

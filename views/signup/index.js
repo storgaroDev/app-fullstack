@@ -1,36 +1,5 @@
 //Imports
-console.log('aiusiajsi');
 import { showNotification } from "../components/notification.js";
-import { getIsAdmin } from '../../../components/getUserRole.js'
-
-const adminBtns = document.querySelectorAll('.admin-btn');
-let sidebar = document.querySelector(".sidebar");
-let closeBtn = document.querySelector("#btn");
-
-(async () => {
-  try {
-    await getIsAdmin();    
-  } catch (error) {
-    adminBtns.forEach(btn => btn.classList.add('buttons-employees'))
-  }
-})();
-
-closeBtn.addEventListener("click", ()=>{
-  sidebar.classList.toggle("open");
-  menuBtnChange();//calling the function(optional)
-});
-
-
-
-// following are the code to change sidebar button(optional)
-function menuBtnChange() {
- if(sidebar.classList.contains("open")){
-   closeBtn.classList.replace("bx-menu", "bx-menu-alt-right");//replacing the iocns class
- }else {
-   closeBtn.classList.replace("bx-menu-alt-right","bx-menu");//replacing the iocns class
- }
-}
-
 
 
 //Selectors
@@ -39,7 +8,6 @@ const formBtn = document.querySelector('#form-btn');
 const inputName = document.querySelector('#name-input');
 const inputEmail = document.querySelector('#email-input');
 const inputPassword = document.querySelector('#password-input');
-const idInput = document.querySelector('#id-input');
 const inputConfirm = document.querySelector('#confirm-input');
 const notification = document.querySelector('#notification');
 
@@ -121,16 +89,10 @@ inputConfirm.addEventListener('input', e => {
 form.addEventListener('submit', async e =>{
     try {
         e.preventDefault();
-        console.log(nameValidation, emailValidation, passwordValidation, confirmValidation);
-        if (!nameValidation || !emailValidation || !passwordValidation || !confirmValidation) {
-            return
-        }
         const newUser = {
             name: inputName.value,
             email: inputEmail.value,
-            password: inputPassword.value,
-            usuario: idInput.value,
-            role: 'employed'
+            password: inputPassword.value
         }
         const { data } = await axios.post('/api/users', newUser);
         console.log(data);
@@ -140,10 +102,9 @@ form.addEventListener('submit', async e =>{
         inputEmail.value = '';
         inputPassword.value = '';
         inputConfirm.value = '';
-        idInput.value = '';
 
         //enviar al login de la pagina
-        window.location.pathname = '/signup';
+        window.location.pathname = '/login';
         
     } catch (error) {
         console.log(error);
