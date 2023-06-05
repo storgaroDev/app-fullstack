@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <!-- Boxicons CDN Link -->
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="shortcut icon" href="./imagenes/creativo.png">
+
+
+   </head>
+   <body>
+    <div class="sidebar">
+      <div class="logo-details">
+        <i class='bx bxl-c-plus-plus icon'></i>
+          <div class="logo_name">The Kingdom</div>
+          <i class='bx bx-menu' id="btn" ></i>
+      </div>
+      <ul class="nav-list">
+        <li>
+          <a href="/admin/works/">
+            <i class='bx bx-grid-alt'></i>
+            <span class="links_name">Trabajos</span>
+          </a>
+           <span class="tooltip">Trabajos</span>
+        </li>
+        <li class="admin-btn">
+         <a href="/admin/profiles/">
+           <i class='bx bx-user' ></i>
+           <span class="links_name">Usuarios</span>
+         </a>
+         <span class="tooltip">Usuarios</span>
+       </li>
+       <li class="admin-btn">
+         <a href="/signup/">
+           <i class='bx bxs-user-plus'></i>
+           <span class="links_name">Crear Nuevo Usuario</span>
+         </a>
+         <span class="tooltip">Crear Nuevo Usuario</span>
+       </li>
+       <li>
+         <a href="/admin/newWork/">
+          <i class='bx bxs-edit'></i>
+           <span class="links_name">Nuevo Trabajo</span>
+         </a>
+         <span class="tooltip">Nuevo Trabajo</span>
+       </li>
+       <li>
+        <a href="/admin/addWorks">
+          <i class='bx bx-clipboard'></i>
+          <span class="links_name">Añadir Acciones</span>
+        </a>
+        <span class="tooltip">Añadir Acciones</span>
+      </li>
+      <li>
+        <a href="/admin/addMarca">
+          <i class='bx bx-car'></i>
+          <span class="links_name">Añadir Marca</span>
+        </a>
+        <span class="tooltip">Añadir Marca</span>
+      </li>
+       <li class="profile">
+           <div class="profile-details">
+             <!--<img src="profile.jpg" alt="profileImg">-->
+           <a href="/">
+             <i class='bx bx-log-out' id="log_out" ></i>
+           </a>
+       </li>
+      </ul>
+    </div>
+    <section class="home-section" class="text-gray-600 body-font flex">
+      <div class="container px-5 py-24 mx-auto ">
+        <div class="flex flex-wrap w-full mb-20 flex-col items-center text-center">
+          <h1 class="sm:text-3xl text-2xl font-medium title-font mb-2 text-gray-900">Agregrar Acciones</h1>
+          <p class="lg:w-1/2 w-full leading-relaxed text-gray-500">We love what we do!</p>
+        </div>
+      <!-- <div id="works-new" class="h-28 grid grid-cols-4 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+
+        </div> -->
+        <div class="flex flex-row justify-evenly items-center">
+
+          <div class="w-full max-w-xs">
+            <form id="form" class="bg-white rounded px-8 pt-6 pb-8 mb-4  shadow-2xl">
+              <div class="mb-4">
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="username">
+                  Nueva Acción
+                </label>
+                <input id="work-new" required class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="text" placeholder="Nueva Acción">
+              </div>
+              <div class="flex items-center justify-between">
+                <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">
+                  Agregar
+                </button>
+              </div>
+            </form>
+          </div>
+          
+  
+          <ul id="div-profiles" class="flex flex-col items-center border border-gray-500 rounded-md h-[25rem] overflow-auto bg-white border-none shadow-xl">
+              
+          </ul>
+        </div>
+      
+    
+    </section>
+
+    <script type="module" src="index.js"></script>
+    <script type="module" src="../../../components/getUserRole.js"></script>
+  </body>
+</html>

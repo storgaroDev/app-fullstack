@@ -8,15 +8,16 @@ const body = document.querySelector('body');
 const createNav = () => {
     const nav = document.createElement('nav');
     nav.id = 'nav-bar';
-    nav.classList.add('bg-zinc-50', 'dark:bg-slate-800', 'h-20', 'fixed', 'top-0', 'left-0', 'right-0');
+    nav.classList.add('bg-zinc-50', 'dark:transparent', 'h-20', 'fixed', 'top-0', 'left-0', 'right-0');
     nav.innerHTML = `
     <div class="flex justify-between items-center h-full px-4">
-    <h1 class="text-zinc-700 dark:text-white text-xl uppercase font-bold">Todo App</h1>
+    <h1 class="text-zinc-700 dark:text-black text-xl uppercase font-bold">Contacts</h1>
 
     <!-- Desktop layout -->
     <div class=" hidden md:flex gap-4 p-4">
-        <a href="/signup/" class="hover:bg-slate-100 hover:dark:bg-slate-700 rounded-lg p-2 font-semibold dark:text-white text-zinc-700 easy-in duration-300">Registro</a>
-        <a href="/login/" class="hover:bg-slate-100 hover:dark:bg-slate-700 rounded-lg p-2 font-semibold dark:text-white text-zinc-700 easy-in duration-300">Login</a>
+    <a class="px-4 py-2 mt-2 text-md text-gray-500 md:mt-0 hover:text-blue-600 focus:outline-none focus:shadow-outline pr-28" href="#about">Contact us</a>
+        <a href="/signup/" class="items-center block px-10 py-3 text-base font-medium text-center text-white transition duration-500 ease-in-out transform bg-blue-600 rounded-xl hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">Sign up</a>
+        <a href="/login/" class="items-center block px-10 py-2.5 text-base font-medium text-center text-blue-600 transition duration-500 ease-in-out transform border-2 border-white shadow-md rounded-xl focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500">Sign in</a>
     </div>
 
     <!-- Mobile layout -->
@@ -54,15 +55,10 @@ const createNav = () => {
 const createNavSignup = () => {
     const nav = document.createElement('nav');
     nav.id = 'nav-bar';
-    nav.classList.add('bg-zinc-50', 'dark:bg-slate-800', 'h-20', 'fixed', 'top-0', 'left-0', 'right-0');
+    nav.classList.add('bg-zinc-50', 'transparent', 'h-20', 'fixed', 'top-0', 'left-0', 'right-0');
     nav.innerHTML = `
     <div class="flex justify-between items-center h-full px-4">
-    <h1 class="text-zinc-700 dark:text-white text-xl uppercase font-bold">Todo App</h1>
-
-    <!-- Desktop layout -->
-    <div class=" hidden md:flex gap-4 p-4">
-        <a href="/login/" class="hover:bg-slate-100 hover:dark:bg-slate-700 rounded-lg p-2 font-semibold dark:text-white text-zinc-700 easy-in duration-300">Login</a>
-    </div>
+    <a href="/" class="text-black hover:text-blue-600 hover:ease-in duration-300 text-xl uppercase font-bold">Contacts</a>
 
     <!-- Mobile layout -->
     <!-- Btn mobile -->
@@ -98,15 +94,12 @@ const createNavSignup = () => {
 const createNavLogin = () => {
     const nav = document.createElement('nav');
     nav.id = 'nav-bar';
-    nav.classList.add('bg-zinc-50', 'dark:bg-slate-800', 'h-20', 'fixed', 'top-0', 'left-0', 'right-0');
+    nav.classList.add('bg-zinc-50', 'transparent', 'h-20', 'fixed', 'top-0', 'left-0', 'right-0');
     nav.innerHTML = `
     <div class="flex justify-between items-center h-full px-4">
-    <h1 class="text-zinc-700 dark:text-white text-xl uppercase font-bold">Todo App</h1>
+    <h1 class="text-zinc-700 dark:text-black text-xl uppercase font-bold">Contacts</h1>
 
     <!-- Desktop layout -->
-    <div class=" hidden md:flex gap-4 p-4">
-        <a href="/signup/" class="hover:bg-slate-100 hover:dark:bg-slate-700 rounded-lg p-2 font-semibold dark:text-white text-zinc-700 easy-in duration-300">Registro</a>
-    </div>
 
     <!-- Mobile layout -->
     <!-- Btn mobile -->
@@ -142,19 +135,19 @@ const createNavLogin = () => {
 const createNavApp = () => {
     const nav = document.createElement('nav');
     nav.id = 'nav-bar';
-    nav.classList.add('bg-zinc-50', 'dark:bg-slate-800', 'h-20', 'fixed', 'top-0', 'left-0', 'right-0');
+    nav.classList.add('bg-aliceblue', 'h-20', 'fixed', 'top-0', 'left-0', 'right-0');
     nav.innerHTML = `
     <div class="flex justify-between items-center h-full px-4">
-    <h1 class="text-zinc-700 dark:text-white text-xl uppercase font-bold">Todo App</h1>
+    <h1 class="text-zinc-700 dark:text-white text-xl uppercase font-bold"></h1>
 
     <!-- Desktop layout -->
-    <div class=" hidden md:flex gap-4 p-4">
-        <button class="hover:bg-slate-100 hover:dark:bg-slate-700 rounded-lg p-2 font-semibold dark:text-white text-zinc-700 easy-in duration-300">Log Out</button>
+    <div class=" hidden md:flex gap-4 p-4 ">
+        <button class="hover:bg-green-300 rounded-lg p-2 font-semibold text-zinc-700 easy-in duration-300">Log Out</button>
     </div>
 
     <!-- Mobile layout -->
     <!-- Btn mobile -->
-    <svg id="nav-btn" class="md:hidden text-zinc-700 w-8 h-8 dark:text-white cursor-pointer" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" >
+    <svg id="nav-btn" class="md:hidden text-zinc-700 w-8 h-8 cursor-pointer" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" >
         <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
       </svg>
     

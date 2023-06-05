@@ -13,10 +13,11 @@ form.addEventListener('submit', async e =>{
     try {
         e.preventDefault();
         const credentials = {
-            email: inputEmail.value,
+            usuario: inputEmail.value,
             password: inputPassword.value
         }
         const { data } = await axios.post('/api/login', credentials);
+        localStorage.setItem('user', data);
         // cargar id en la barra de navegacion y llevar a otra pagina
         window.location.pathname = `/app/${data}`;
         

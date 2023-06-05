@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="kk.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.0/gsap.min.js">
+</head>
+<body>
+  <div class="main">
+    <svg viewBox="0 0 630 352" xmlns="http://www.w3.org/2000/svg">
+      <mask id="m1">
+          <image class="m" xlink:href="https://assets.codepen.io/721952/liquidMask1.svg" y="-1" width="630" height="10620" />
+      </mask>
+      <mask id="m2">
+          <image class="m" class="maskImg" xlink:href="https://assets.codepen.io/721952/liquidMask1.svg" y="-1" width="630" height="10620" />
+      </mask>
+      <image mask="url(#m2)" xlink:href="https://images.unsplash.com/photo-1597626564517-426e3c39ebbe?auto=format&fit=crop&w=1260&q=50" width="630" height="420" />
+      <g mask="url(#m1)">
+        <image class="frog" xlink:href="https://images.unsplash.com/photo-1597626564517-426e3c39ebbe?auto=format&fit=crop&w=1260&q=50" width="630" height="420" />
+      </g>
+    </svg>
+  </div>
+  <script src="ss.js"></script>
+</body>
+</html>

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<!-- Created by CodingLab |www.youtube.com/CodingLabYT-->
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <!--<title> Responsive Sidebar Menu  | CodingLab </title>-->
+    <link rel="stylesheet" href="style.css">
+    <!-- Boxicons CDN Link -->
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+    <link rel="shortcut icon" href="./imagenes/creativo.png">
+
+
+
+
+
+   </head>
+   <body>
+    <div class="sidebar">
+      <div class="logo-details">
+        <i class='bx bxl-c-plus-plus icon'></i>
+          <div class="logo_name">The Kingdom</div>
+          <i class='bx bx-menu' id="btn" ></i>
+      </div>
+      <ul class="nav-list">
+        <li>
+          <a href="/admin/works/">
+            <i class='bx bx-grid-alt'></i>
+            <span class="links_name">Trabajos</span>
+          </a>
+           <span class="tooltip">Trabajos</span>
+        </li>
+        <li class="admin-btn">
+         <a href="/admin/profiles/">
+           <i class='bx bx-user' ></i>
+           <span class="links_name">Usuarios</span>
+         </a>
+         <span class="tooltip">Usuarios</span>
+       </li>
+       <li class="admin-btn">
+         <a href="/signup/">
+           <i class='bx bxs-user-plus'></i>
+           <span class="links_name">Crear Nuevo Usuario</span>
+         </a>
+         <span class="tooltip">Crear Nuevo Usuario</span>
+       </li>
+       <li>
+         <a href="/admin/newWork/">
+          <i class='bx bxs-edit'></i>
+           <span class="links_name">Nuevo Trabajo</span>
+         </a>
+         <span class="tooltip">Nuevo Trabajo</span>
+       </li>
+       <li>
+        <a href="/admin/addWorks">
+          <i class='bx bx-clipboard'></i>
+          <span class="links_name">Añadir Acciones</span>
+        </a>
+        <span class="tooltip">Añadir Acciones</span>
+      </li>
+      <li>
+        <a href="/admin/addMarca">
+          <i class='bx bx-car'></i>
+          <span class="links_name">Añadir Marca</span>
+        </a>
+        <span class="tooltip">Añadir Marca</span>
+      </li>
+       <li class="profile">
+           <div class="profile-details">
+             <!--<img src="profile.jpg" alt="profileImg">-->
+           <a href="/">
+             <i class='bx bx-log-out' id="log_out" ></i>
+           </a>
+       </li>
+      </ul>
+    </div>
+    <section id="form-pers" class="home-section2 grid h-screen place-items-center">
+        <div class="mt-10 ">
+          <div class="md:grid md:grid-cols-3 md:gap-6 ml-32 mb-16">
+            <div class="col-span-2">
+            </div>
+            <div class="mt-5 md:col-span-2 md:mt-0">
+              <form action="#" method="POST" id="form">
+                <div class="overflow-hidden">
+                  <div class="bg-white px-4 py-5 mt-10 xl:ml-32">
+                    <div class="grid grid-cols-6 gap-6">
+                      <div class="col-span-6">
+                        <label for="first-name" class="block text-sm font-medium text-gray-700"><span class=" text-red-500">*</span>Nombres</label>
+                        <input type="text" placeholder="Nombres" name="first-name" required id="first-name" autocomplete="given-name" class="border border-zinc-200 p-2 rounded-md bg-transparent focus:outline-0 focus:ring-2 focus:ring-blue-400 ease-in duration-200 text-slate-800 font-semibold w-full">
+                      </div>
+        
+                      <div class="col-span-6">
+                        <label for="last-name" class="block text-sm font-medium text-gray-700"><span class=" text-red-500">*</span>Apellidos</label>
+                        <input type="text" placeholder="Apellidos" name="last-name" required id="last-name" autocomplete="family-name" class="border border-zinc-200 p-2 rounded-md bg-transparent focus:outline-0 focus:ring-2 focus:ring-blue-400 ease-in duration-200 text-slate-800 font-semibold w-full">
+                      </div>
+        
+                      <div class="col-span-6">
+                        <label for="email-address" class="block text-sm font-medium text-gray-700"><span class=" text-red-500">*</span>Email</label>
+                        <input type="text" placeholder="ejemplo@email.com" name="email-address" required id="email-address" autocomplete="email" class="border border-zinc-200 p-2 rounded-md bg-transparent focus:outline-0 focus:ring-2 focus:ring-blue-400 ease-in duration-200 text-slate-800 font-semibold w-full">
+                      </div>
+                              
+                      <div class="col-span-6">
+                        <label for="street-address" class="block text-sm font-medium text-gray-700"><span class=" text-red-500">*</span>Número telefónico</label>
+                        <input type="text" placeholder="XXX-XXXXXXX" name="street-address" required id="street-address" autocomplete="street-address" class="border border-zinc-200 p-2 rounded-md bg-transparent focus:outline-0 focus:ring-2 focus:ring-blue-400 ease-in duration-200 text-slate-800 font-semibold w-full">
+                      </div>
+
+        
+                      <div class="col-span-6">
+                        <label for="country" class="block text-sm font-medium text-gray-700"><span class=" text-red-500">*</span>Marca del vehículo</label>
+                        <select id="country" name="country" autocomplete="country-name" class="shadow-md mt-1 block w-full rounded-md border border-gray-300 bg-white py-2 px-3 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm">
+                          <option value="Toyota">Toyota</option>
+                          <option value="Chevrolet">Chevrolet</option>
+                          <option value="Mitsubishi">Mitsubishi</option>
+                        </select>
+                      </div>
+
+                      <div class="col-span-6 overflow-auto">
+                        <label for="work-todo" class="block text-sm font-medium text-gray-700"><span class=" text-red-500">*</span>Trabajo a realizar</label>
+                      <select id="work-todo" name="work-todo" autocomplete="work-todo" class="shadow-md mt-1 block w-full rounded-md border border-gray-300 bg-white py-2 px-3 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm">
+                        <option value="Amortiguadores">Amortiguadores</option>
+                          <option value="Cambio de aceite">Cambio de aceite</option>
+                          <option value="Tren delantero">Tren delantero</option>
+                          <option value="Frenos">Frenos</option>
+                        </select>
+                      </div>
+
+                      <div class="col-span-6 lg:col-span-2">
+                        <label for="city" class="block text-sm font-medium text-gray-700"><span class=" text-red-500">*</span>Fecha de emisión</label>
+                        <input type="date" name="city" id="city" required autocomplete="address-level2" class="border border-zinc-200 p-2 rounded-md bg-transparent focus:outline-0 focus:ring-2 focus:ring-blue-400 ease-in duration-200 text-slate-800 font-semibold w-full">
+                      </div>
+        
+                      <div class="col-span-6 lg:col-span-2">
+                        <label for="price" class="block text-sm font-medium text-gray-700"><span class=" text-red-500">*</span>Precio $</label>
+                        <input type="number" name="price" id="price" required class="border border-zinc-200 p-2 rounded-md bg-transparent focus:outline-0 focus:ring-2 focus:ring-blue-400 ease-in duration-200 text-slate-800 font-semibold w-full">
+                      </div>
+                      <div class="col-span-6 lg:col-span-2 felx justify-center items">
+                        <label for="region" class="block text-sm font-medium text-gray-700"><span class=" text-red-500">*</span>Nombre del Empleado</label>
+                        <input type="text" placeholder="Admin123" name="region" id="region" required class="border border-zinc-200 p-2 rounded-md bg-transparent focus:outline-0 focus:ring-2 focus:ring-blue-400 ease-in duration-200 text-slate-800 font-semibold w-full">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="bg-gray-50 px-4 py-3 text-right sm:px-6 xl:ml-32 flex justify-evenly">
+                    <button type="button" id="more-items">
+                      <i  class='bx bx-plus'></i>
+                    </button>
+                    <button  class="inline-flex justify-center rounded-md border border-transparent bg-indigo-600 py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">Save</button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+    </section>
+
+    <script type="module" src="index.js"></script>
+  </body>
+</html>
